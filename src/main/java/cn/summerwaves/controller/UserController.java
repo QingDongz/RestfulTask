@@ -50,12 +50,12 @@ public class UserController {
         return  "userlist";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/register", method = RequestMethod.GET)
     public String toRegister() {
         return "register";
     }
 
-    @RequestMapping(value = "/modify", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/modify", method = RequestMethod.GET)
     public String toModify() {
         return "MDPassword";
     }

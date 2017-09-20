@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: summerwaves
@@ -6,12 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<form action="/users/${user.username}" method="post">
+<form action="${ctx}/users/${user.username}" method="post">
     <input type="hidden" name="_method" value="PUT">
     用户名<input type="text" name="username" value="${user.username}" readonly="readonly"></br>
     密码<input type="text" name="password" value="${user.password}"></br>

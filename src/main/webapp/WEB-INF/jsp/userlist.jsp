@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <%--
   Created by IntelliJ IDEA.
   User: summerwaves
@@ -12,7 +13,7 @@
     <title>当前用户</title>
 </head>
 <body>
-<form action="/register"method="get">
+<form action="${ctx}/users/register"method="get">
     <input type="submit" value="新增用户">
 </form>
 <table border="1">
@@ -21,10 +22,10 @@
     <c:forEach items="${list}" var="users">
         <tr>
             <td>${users.username}</td>
-            <td><form action="/users/${users.username}" method="get">
+            <td><form action="${ctx}/users/${users.username}" method="get">
                 <input type="submit" value="详细信息">
             </form>
-                <form action="/users/${users.username}" method="post">
+                <form action="${ctx}/users/${users.username}" method="post">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" value="删除">
                 </form></td>
