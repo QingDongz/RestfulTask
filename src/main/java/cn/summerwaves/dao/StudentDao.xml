@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.summerwaves.dao.StudentDao">
     <insert id="insertStudent" parameterType="cn.summerwaves.model.Student" useGeneratedKeys="true" keyProperty="id">
-        insert into student(name,QQ,type,appointment,school,number,link,oath,sup_senior,referrer,source)
+        insert into student(name,QQ,type,appointment,school,number,link,oath,supportSenior,referrer,source)
           values(#{name},#{QQ},#{type},#{appointment},#{school},#{number},#{link},#{oath},#{supportSenior},#{referrer},#{source})
     </insert>
 
@@ -17,7 +17,7 @@
             <if test="number != null">number=#{number},</if>
             <if test="link != null">link=#{link},</if>
             <if test="oath != null">oath=#{oath},</if>
-            <if test="supportSenior != null">sup_senior=#{supportSenior},</if>
+            <if test="supportSenior != null">supportSenior=#{supportSenior},</if>
             <if test="referrer != null">referrer=#{referrer},</if>
             <if test="source != null">source=#{source}</if>
         </set>

@@ -19,10 +19,10 @@ public interface StudentDao {
     List<Student> getAllStudent();
 
     @Select("SELECT * FROM student WHERE ID = #{id}")
-    Student getStudentById(long id);
+    Student getStudentById(int id);
 
     @Delete("DELETE FROM student WHERE ID = #{id} ")
-    void deleteStudent(long id);
+    void deleteStudent(int id);
 
     void updateStudent(Student student);
 
