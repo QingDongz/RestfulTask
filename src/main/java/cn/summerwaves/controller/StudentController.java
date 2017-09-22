@@ -3,6 +3,7 @@ package cn.summerwaves.controller;
 import cn.summerwaves.model.Student;
 import cn.summerwaves.service.IStudentService;
 import org.apache.ibatis.annotations.Param;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,8 @@ import java.util.List;
  */
 @Controller
 public class StudentController {
+
+    private static Logger logger = Logger.getLogger("StudentController.class");
 
     @Resource
     private IStudentService userService;
@@ -49,6 +52,7 @@ public class StudentController {
         request.getHeader("Accept");
         request.getSession().setAttribute("head",request.getHeader("Accept"));
         request.getSession().setAttribute("students", students);
+        logger.info("使用Json接口");
         return "json";
     }
 
@@ -56,16 +60,19 @@ public class StudentController {
     public String toUserList(HttpServletRequest request) throws IOException {
         List<Student> students = userService.getAllStudent();
         request.getSession().setAttribute("list", students);
+        logger.info("显示所有用户");
         return "studentList";
     }
 
     @RequestMapping(value = "/student/register", method = RequestMethod.GET)
     public String toRegister() {
+        logger.info("转入添加学员页面");
         return "register";
     }
 
     @RequestMapping(value = "/student/modify", method = RequestMethod.GET)
     public String toModify() {
+        logger.info("转入修改页面");
         return "modify";
     }
 
@@ -92,12 +99,14 @@ public class StudentController {
             userService.insertStudent(student);
             return new ModelAndView("registerSuccess", "username", student.getName());
         }
+        logger.debug("用户名为空");
         return new ModelAndView("registerFailure");
     }
     @RequestMapping(value = "/student/{id}", method = RequestMethod.DELETE , produces = "application/json; charset=utf-8")
     @ResponseBody
     public String deleteUser(@PathVariable("id")int id) throws IOException {
         userService.deleteStudent(id);
+        logger.info("删除用户");
         return "删除用户成功";
     }
 
@@ -122,6 +131,7 @@ public class StudentController {
         student.setReferrer(referrer);
         student.setSource(source);
         userService.updateStudent(student);
+        logger.info("修改学员信息");
         return "修改信息成功";
     }
 
@@ -130,6 +140,7 @@ public class StudentController {
     public String showUser(@PathVariable("id")int id,HttpServletRequest request) throws IOException {
         Student student = userService.getStudentById(id);
         request.getSession().setAttribute("student", student);
+        logger.info("查看用户详细信息");
         return "showUser";
     }
 
