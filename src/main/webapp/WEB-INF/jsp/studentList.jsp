@@ -13,19 +13,19 @@
     <title>当前用户</title>
 </head>
 <body>
-<form action="${ctx}/users/register"method="get">
-    <input type="submit" value="新增用户">
+<form action="${ctx}/student/register"method="get">
+    <input type="submit" value="添加学员">
 </form>
 <table border="1">
-    <th>用户名</th>
+    <th>学员名</th>
     <th>操作</th>
-    <c:forEach items="${list}" var="users">
+    <c:forEach items="${list}" var="students">
         <tr>
-            <td>${users.username}</td>
-            <td><form action="${ctx}/users/${users.username}" method="get">
+            <td>${students.name}</td>
+            <td><form action="${ctx}/student/${students.id}" method="get">
                 <input type="submit" value="详细信息">
             </form>
-                <form action="${ctx}/users/${users.username}" method="post">
+                <form action="${ctx}/student/${students.id}" method="post">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" value="删除">
                 </form></td>

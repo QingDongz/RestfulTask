@@ -10,15 +10,22 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Title</title>
+    <title>用户详细信息</title>
 </head>
 <body>
-用户名：${user.username} </br>
-密码:${user.password} </br>
-性别:${user.sex}</br>
-
-<form action="${ctx}/users/modify" method="get">
-    <input type="submit" value="修改密码">
+    学员名：${student.name} </br>
+    QQ: ${student.QQ} </br>
+    类型 : ${student.type}</br>
+    入学时间: ${student.appointment} </br>
+    毕业学校: ${student.school} </br>
+    学号: ${student.number} </br>
+    日报链接: ${student.link} </br>
+    立愿: ${student.oath} </br>
+    辅助师兄: ${student.supportSenior} </br>
+    推荐师兄: ${student.referrer} </br>
+    来源: ${student.source} </br>
+<form action="${ctx}/student/modify" method="get">
+    <input type="submit" value="修改信息">
 </form>
 
 </body>

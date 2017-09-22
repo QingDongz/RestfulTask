@@ -11,17 +11,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>用户注册</title>
+    <title>添加学员</title>
 </head>
 <body>
-<form  action="${ctx}/users" method="post">
-    用户名<input type="text" name="username" />
+<form  action="${ctx}/student" method="post">
+    用户名<input type="text" name="name" />
     <br/>
-    密码<input type="password" name="password"/>
+    QQ<input type="text" name="QQ"/>
     <br/>
-    性别:  男<input type="radio" checked="checked" name="sex" value="M"/>
-    女<input type="radio" name="sex"  value="F" /><br>
-    <input type="submit" name="注册" value="注册">
+    类型：<input type="radio" checked="checked" name="type" value="CSS"/>CSS
+    <input type="radio" name="type"  value="JAVA" />JAVA
+    <input type="radio" name="type"  value="PM" />PM
+    <br>
+    入学时间<input type="text" name="appointment" />
+    <br/>
+    毕业学校<input type="text" name="school"/>
+    <br/>
+    学号<input type="text" name="number"/>
+    <br/>
+    日报链接<input type="text" name="link"/>
+    <br/>
+    立愿<input type="text" name="oath"/>
+    <br/>
+    辅助师兄<input type="text" name="supportSenior"/>
+    <br/>
+    推荐师兄<input type="text" name="referrer"/>
+    <br/>
+    来源<input type="text" name="source"/>
+    <br/>
+<%--    性别:  男<input type="radio" checked="checked" name="sex" value="M"/>
+    女<input type="radio" name="sex"  value="F" /><br>--%>
+    <input type="submit" name="注册" value="添加学员">
 </form>
 </body>
 </html>

@@ -9,9 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>test</title>
+    <title>添加成功</title>
 </head>
 <body>
-用户${username}创建成功
+学员${student.name}添加成功
 </body>
 </html>

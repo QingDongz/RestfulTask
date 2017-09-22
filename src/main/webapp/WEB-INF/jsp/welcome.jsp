@@ -10,10 +10,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>欢迎页面</title>
 </head>
 <body>
-<a href="${ctx}/users">用户列表</a><br/>
-<a href="${ctx}/users/register">注册</a>
+<a href="${ctx}/students">学员列表</a><br/>
+<a href="${ctx}/student/register">添加学员</a><br/>
+<a href="${ctx}/json">Json接口</a>
 </body>
 </html>
