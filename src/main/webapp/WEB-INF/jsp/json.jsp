@@ -1,4 +1,4 @@
-<%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>
+<%--<%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -15,7 +15,7 @@
 <span>${head}</span>
 <body>
 <br>
-<json:object>
+<%--<json:object>
     <json:array name="user" var="student" items="${students}">
         学员名<json:property name="学员名" value="${student.name} "/>
         QQ <json:property name="QQ" value="${student.QQ}"/>
@@ -30,6 +30,6 @@
         来源<json:property name="来源" value=" ${student.source}"/>
         <br/>
     </json:array>
-</json:object>
+</json:object>--%>
 </body>
 </html>
